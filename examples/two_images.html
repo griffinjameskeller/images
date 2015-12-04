@@ -7,27 +7,27 @@
 
     //save images as global variables
     var bg, ufo;
-     
+
     function preload() {
       // load image
       bg = loadImage("../assets/nyc.jpg");
       ufo = loadImage("../assets/ufo.png");
     }
-    
-    function setup() 
-    {  
+
+    function setup()
+    {
       // hide mouse cursor
       noCursor();
-      createCanvas(bg.width/4, bg.height/4);
+      createCanvas(bg.width/6, bg.height/6);
     }
-     
-    function draw() 
+
+    function draw()
     {
-      
+
       // display background image
       image(bg, 0, 0, bg.width/4, bg.height/4)
       //or I could have done: background(bg);
-      
+
       // center the ufo to the cursor
       imageMode(CENTER);
       // display ufo
@@ -41,8 +41,9 @@
         } else{
           stroke("red");
           line(mouseX,mouseY,mouseX+100,mouseY+100);
+
         }
-      }  
+      }
     }
 </script>
 </head>
@@ -50,4 +51,3 @@
 <body>
 </body>
 </html>
-

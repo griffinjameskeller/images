@@ -7,27 +7,50 @@
   <script>
 
   //declare your images as a global variable
- 
+  var bg, cat, tag, wall;
+  var number = 10;
 
 	function preload(){
-
 		// Load the image
+    bg = loadImage("../assets/bg.jpg");
+    cat = loadImage("../assets/cat.png");
+    wall = loadImage("../assets/wall.jpg");
+    tag = loadImage("../assets/tag.png");
 	}
 
 
 	function setup() {
 
 	  //set up your canvas
+createCanvas(bg.width, 600);
 
 	}
 
 	function draw() {
+    bg.filter(POSTERIZE,number);
+    image(bg, 0, 0, bg.width, bg.height)
 
+    imageMode(CENTER);
+    // display ufo
+    image(wall, 200,450,wall.width/2,wall.height/2);
+    image(wall, 900,450,wall.width/2,wall.height/2);
+    image(cat, mouseX, 236,cat.width/5,cat.height/5);
+    blend(tag, 0, 0, tag.width, tag.height, 200, 270, tag.width, tag.height, DARKEST);
 		//draw
 
-	}
+    if(mouseIsPressed){
 
-	</script>
+        	if(number > 3){
+        		number = number - 1;
+        	} else {
+            number = 9;
+          }
+
+        }
+}
+
+
+</script>
 </head>
 
 <body>

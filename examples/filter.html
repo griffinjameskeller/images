@@ -5,37 +5,37 @@
   <style> body {padding: 0; margin: 0;} </style>
   <script>
   var originalImage, thresholdImage, invertImage;
- 
+
   function preload() {
 	  // load original image
 	  originalImage = loadImage("../assets/statueofliberty.jpg");
-	  
+
 	  // load in a few more copies (you could also use clone())
 	  thresholdImage = loadImage("../assets/statueofliberty.jpg");
-	  grayImage = loadImage("../assets/statueofliberty.jpg"); 
+	  grayImage = loadImage("../assets/statueofliberty.jpg");
 	}
 
-	function setup() 
+	function setup()
 	{
 	  // set canvas size
 	  createCanvas(1200, 300);
 
 	  // add filters to images
 	  thresholdImage.filter(BLUR,5);
-	  grayImage.filter(GRAY); 
+	  grayImage.filter(GRAY);
 	}
-	 
-	function draw() 
+
+	function draw()
 	{
 	  background(255);
-	  
 
-	  
+
+
 	   // display images
-	  image(originalImage, 0, 0); 
-	  image(thresholdImage, 400, 0);  
+	  image(originalImage, 0, 0);
+	  image(thresholdImage, 400, 0);
 	  image(grayImage, 800, 0);
-	  
+
 	  // display text labels
 	  fill(0);
 	  noStroke();
